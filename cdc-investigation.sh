@@ -15,7 +15,7 @@ echo "/=========================================================/
 /=========================================================/"
 
 echo "scanning /var directory for exploit attempts..."
-timeout -s SIGKILL 10s sudo grep -RnsI /var -e 'jndi:' '${::-j}' | grep -v "Error looking up JNDI"
+timeout -s SIGKILL 10s sudo grep -RnsI /var -e 'jndi:' '${::-j}' | grep -v "Error looking up JNDI" | grep -v "COMMAND"
 echo "scanning /opt directory for exploit attempts"
 timeout -s SIGKILL 10s sudo grep -RnsI /opt -e 'jndi' '${::-j}' | grep -v "Error looking up JNDI"
 
