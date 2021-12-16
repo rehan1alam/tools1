@@ -24,9 +24,9 @@ echo "/==============================================================/
 / ${red}Instruction: The result may indicate that host was exploited${reset} /
 /==============================================================/"
 
-timeout -s SIGKILL 10s sudo grep -RInsE '(\J\N\D\I).*\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}:[0-9]{1,3}\b|(\J\N\D\I).*([\w+.]{1,}[a-z]{1,3}:[0-9]{2,5}\b)' /var
+timeout -s SIGKILL 10s sudo grep -RInsE '(\J\N\D\I).*\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}:[0-9]{1,3}\b|(\J\N\D\I).*([\w+.]{1,}[a-z]{1,3}:[0-9]{2,5}\b)' /var | grep -v "grep -RInsE"
 
-timeout -s SIGKILL 10s sudo grep -RInsE '(\J\N\D\I).*\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}:[0-9]{1,3}\b|(\J\N\D\I).*([\w+.]{1,}[a-z]{1,3}:[0-9]{2,5}\b)' /opt
+timeout -s SIGKILL 10s sudo grep -RInsE '(\J\N\D\I).*\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}.\b[0-9]{1,3}:[0-9]{1,3}\b|(\J\N\D\I).*([\w+.]{1,}[a-z]{1,3}:[0-9]{2,5}\b)' /opt | grep -v "grep -RInsE"
 
 echo "/====================================================================/
 / Objective: Scanning for Java process making network connections    /
