@@ -3,11 +3,11 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 reset=`tput sgr0`
 
-echo "/********************************************************/
-/* LOG4J Investigation
-/* Author: CDC                                          */
-/* Last updated on: Dec 2021                            */
-/********************************************************/"
+echo "/*********************************************************/
+/* LOG4J Investigation                                   */
+/* Author: CDC                                           */
+/* Last updated on: Dec 2021                             */
+/*********************************************************/"
 
 echo "/=========================================================/
 / Objective: Scanning for exploit attempts                /
@@ -38,7 +38,7 @@ ps -ef | grep -P '[0-9+]+(\.[0-9]+){3}(:[0-9]+\/)|\w+[.]\w{1,3}:[0-9]{2,5}[\/]+|
 echo "/====================================================================/
 / Objective: Fetching active network connections to the public IP    /
 / ${red}Instruction: Host making network connection to an unkown IP/Domain /
-/              may should investigated properly${reset}                      /
+/              may should investigated properly${reset}                     /
 /====================================================================/"
 
 sudo netstat -tnp  | grep -v 169.254.169.254 | grep -v 127.0.0.1 | grep -P '(\d+)(?<!10)\.(\d+)(?<!192\.168)(?<!172\.(1[6-9]|2\d|3[0-1]))\.(\d+)\.(\d+)[/:]'
