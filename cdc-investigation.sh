@@ -5,7 +5,7 @@ reset=`tput sgr0`
 
 echo "/*********************************************************/
 /* LOG4J Investigation                                   */
-/* Author: CDC                                           */
+/* Author: Rehan Alam                                    */
 /* Last updated on: Dec 2021                             */
 /*********************************************************/"
 
